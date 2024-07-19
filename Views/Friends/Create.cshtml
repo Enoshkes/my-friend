@@ -1,0 +1,9 @@
+﻿@model MyFriend.ModelView.FriendModelView;
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <input asp-for="FirstName" />
+    <input asp-for="LastName" />
+    <input asp-for="Email" />
+    <input type="file" asp-for="Image" />
+    <button type="submit">Submit</button>
+</form>

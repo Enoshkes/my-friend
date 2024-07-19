@@ -1,0 +1,20 @@
+﻿@model List<MyFriend.Models.FriendModel>
+
+<div>
+    @foreach (var friend in Model)
+    {
+        <h2>@friend.FirstName</h2>
+        <h2>@friend.LastName</h2>
+        <h2>@friend.Email</h2>
+        @foreach (var image in friend.Images)
+        {
+            @if (image.Data != null && image.Data.Length > 0)
+            {
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(image.Data)"
+                     alt="Product Image"
+                     class="carousel-image"
+                />
+            }
+        }
+    }
+</div>
